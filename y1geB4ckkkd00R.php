@@ -8,7 +8,7 @@ if(@$_FILES["attach"]["error"] == 0) {
         if(!in_array($_FILES["attach"]['type'], $typeAccepted)) {
             exit("type error");
         }
-        if(in_array($filearr["extension"], $blackext) || !stripos($filearr["extension"],'php')) {
+        if(in_array($filearr["extension"], $blackext) || stripos($filearr["extension"],'php')) {
             exit("extension error");
         }
         $filename = md5(chr(mt_rand(0,255))) . "." . $filearr["extension"];
